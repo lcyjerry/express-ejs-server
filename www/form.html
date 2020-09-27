@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <body>
+    用户:<input type="text" id="username" name="user" /><br />
+    密码:<input type="password" id="password" name="pass" /><br />
+    <input id="log" type="button" value="登陆" />
+    <input id="reg" type="button" value="注册" />
+
+    <script>
+      var user = document.getElementById("username");
+      var pass = document.getElementById("password");
+      log.onclick = function () {
+        axios
+          .post("http://localhost:8080", {
+            params: {
+              user: user.value,
+              pass: pass.value,
+            },
+          })
+          .then((res) => {
+            console.log(res.data);
+          });
+      };
+
+      reg.onclick = function () {
+        axios
+          .post("http://localhost:8080", {
+            params: {
+              user: user.value,
+              pass: pass.value,
+            },
+          })
+          .then((res) => {
+            console.log(res.data);
+          });
+      };
+    </script>
+  </body>
+</html>
